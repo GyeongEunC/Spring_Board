@@ -1,0 +1,14 @@
+create table myBoard(
+bno number not null,
+title varchar2(30) not null,
+content varchar2(2000) not null,
+regDate date default sysdate,
+viewCnt number default 0,
+writer varchar2(30) not null,
+primary key(bno)
+);
+
+create sequence myBoard_seq;
+
+insert into myboard(bno, title, content, writer) values(myboard_seq.nextval, 'new title', '1st content', 'eun');
+insert into myboard(bno, title, content, writer) values(myboard_seq.nextval, '1st title', 'N_content', 'min');
